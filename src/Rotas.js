@@ -6,17 +6,14 @@ import { UserContext } from './Context/UserContext';
 import ItensAprovados from './ItensAprovados';
 import MediaNota from './MediaNota';
 
-
 import Login from './Login';
 
 const Tab = createBottomTabNavigator();
 
 export default function Rotas() {
 
-    const{logado} = useContext( UserContext );
-
+    const{logado} = useContext( UserContext );   
    
-
     if( logado == false ) {
         return( <Login /> )
     }

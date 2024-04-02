@@ -22,13 +22,11 @@ export default function Home( {navigation} )
         const status = await Network.getNetworkStateAsync();
         if( status.type == "WIFI" ) {
             setRede( true );
-
         }
     }
 
     useEffect( ()=> {
         getStatus();
-
     } , [rede]);
 
     useEffect( () => {
@@ -44,7 +42,6 @@ export default function Home( {navigation} )
             setCor( 'white' );
         }
     }
-
 
     return(
         <>
