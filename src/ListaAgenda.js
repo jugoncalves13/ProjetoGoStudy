@@ -11,15 +11,14 @@ export default function ListaAgenda({nome}){
 
 const css = StyleSheet.create({
     editaitem:{
-        backgroundColor:"blue",
-        width: "100%",
+        color:  "red",
         height: 55,
-        color: "white",
-        marginTop:20,
-        borderRadius: 5,
-        textAlign: "center",
-        fontSize: 15,
-        display: "flex"
-
+        borderWidth:1,
+        borderRadius: 10,
+        padding: 15, 
+        marginTop: 5,
+        marginBottom: 15,
+        display: "flex",
+        marginTop: 35,
     }
 })
