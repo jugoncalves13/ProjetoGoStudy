@@ -19,7 +19,7 @@ const HomeScreen = ({ navigation }) => {
         style={styles.button}
         onPress={() => navigation.navigate('Recursos')}>
         <Text style={styles.buttonText}>Ver Recursos</Text>
-      </TouchableOpacity>
+      </TouchableOpacity>      
     </View>
   );
 };
