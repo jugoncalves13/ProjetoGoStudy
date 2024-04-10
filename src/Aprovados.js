@@ -23,7 +23,7 @@ const css = StyleSheet.create({
         margin:19
     },
     nome: {
-        color: "blue",
+        color: "#4169E1",
         fontWeight: "bold",
         
         

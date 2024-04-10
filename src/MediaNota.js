@@ -85,7 +85,7 @@ export default function MediaNota() {
         TextInput={QuintaNota}
       />
       <TouchableOpacity style={styles.btn} onPress={CalculaResultado}>
-        <Text style={styles.btnText}>Calcular</Text>
+        <Text style={styles.btnText}>CALCULAR</Text>
       </TouchableOpacity>
       
       <Text style={[styles.Resultado , {color: cor}]}>{Resultado}</Text>
@@ -102,9 +102,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   titulo:{
-    fontSize: 25,
+    fontSize: 20,
     fontWeight: "bold",
-    color:"lightblue",
+    color:"black", 
     marginBottom:15
   },
   input: {
@@ -122,16 +122,19 @@ const styles = StyleSheet.create({
     fontWeight: "bold"
   },
   btn: {
+    backgroundColor: "#87CEFA",
     width: "90%",
     height: 60,
-    backgroundColor: "lightblue",
-    borderRadius: 5
+    borderRadius: 5,
+    alignContent: "center ",
+    justifyContent: "center",
+    alignItems: "center"
   },
   btnText: {
-    color: "white",
+    color: "black",
     textAlign: "center",
-    lineHeight: 60,
-    fontSize: 25,
+    lineHeight: 50,
+    fontSize: 18,
     fontWeight: "bold"
 
   },

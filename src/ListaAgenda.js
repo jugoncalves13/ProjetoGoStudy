@@ -1,24 +1,27 @@
 import {   StyleSheet, Text, View  } from "react-native";
 
-export default function ListaAgenda({nome}){
+export default function ListaAgenda({agenda, tema}){
 
     return(
-        <View >
-        <Text style={css.editaitem}>{nome}</Text>
+        <View  style={css.editaitem}>
+        <Text>{tema}</Text>
+        <Text>{agenda}</Text>
     </View>
     )
 }
 
 const css = StyleSheet.create({
     editaitem:{
-        color:  "red",
+        color: "white",
+        fontSize: 25,
         height: 55,
         borderWidth:1,
         borderRadius: 10,
         padding: 15, 
         marginTop: 5,
-        marginBottom: 15,
+        marginBottom: 25,
         display: "flex",
-        marginTop: 35,
+        marginTop: 5,
+        alignItems: "center"
     }
 })

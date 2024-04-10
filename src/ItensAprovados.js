@@ -44,7 +44,7 @@ export default function ItensAprovados({navigation})
 
     return(
         <View style={css.container}>
-            <Text>Bem Vindo {usuario}</Text>
+            <Text style={css.input}>Olha só quem já passou com a gente! {usuario}</Text>
             <FlatList
                 data={dados}
                 renderItem={({item}) => <Aprovados nome={item.nome}
@@ -67,5 +67,12 @@ const css = StyleSheet.create({
         width: "100%",
         display: "flex",
        justifyContent: "center"
+    },
+    input: {
+        textAlign: "center",
+        fontSize: 20,
+        fontWeight: "bold",
+        color:"black", 
+        marginBottom:20
     }
 })

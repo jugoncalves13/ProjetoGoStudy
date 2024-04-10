@@ -31,7 +31,7 @@ export default function Agenda()
         Keyboard.dismiss();
         const evento = {
             id: uuid.v4(),
-            nome: agenda,
+            agenda: agenda,
             inicio: inicio,
             final: final,
             tema: tema
@@ -116,7 +116,7 @@ export default function Agenda()
             </View>
             <FlatList
                 data={dados}
-                renderItem={ ({item}) => <ListaAgenda nome={item.nome}></ListaAgenda>}
+                renderItem={ ({item}) => <ListaAgenda agenda={item.agenda} tema={item.tema}  />}
                 keyExtractor={ item => item.id }
             />
         </View>
@@ -124,9 +124,11 @@ export default function Agenda()
 }
 const css = StyleSheet.create({
     titulo: {
+        textAlign: "center",
         fontSize: 20,
         fontWeight: "bold",
-        marginBottom: 15
+        color:"black", 
+        marginBottom:50
       },
     container: {
         width: "90%",
@@ -134,7 +136,7 @@ const css = StyleSheet.create({
         justifyContent: "center",
         alignContent: "center",
         alignItens: "center",
-        alignSelf: "center"
+        alignSelf: "center",
     },
     input:{
         width: "100%",
@@ -143,20 +145,24 @@ const css = StyleSheet.create({
         borderRadius: 10,
         padding: 15, 
         marginTop: 5,
-        marginBottom: 15,
+        marginBottom: 25,
         display: "flex",
         fontWeight: "bold",
     },
     btn:{
         backgroundColor: "#87CEFA",
         width: "100%",
-        height: 55,
+        height: 60,
         borderRadius: 5,
         alignContent: "center ",
         justifyContent: "center",
         alignItems: "center"
     },
     btntext:{
-        fontWeight: "bold"
+        fontSize: 20,
+        lineHeight: 50,
+        color: "black",
+        fontWeight: "bold",
+        textAlign: "center"
     }
 })

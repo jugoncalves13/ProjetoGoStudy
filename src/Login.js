@@ -55,14 +55,14 @@ const css = StyleSheet.create({
     btn: {
         width: "80%",
         height: 50,
-        backgroundColor: "lightblue",
+        backgroundColor: "#87CEFA",
         borderRadius: 5,
         marginBottom: 10
     },
     btnText: {
         fontSize: 20,
         lineHeight: 50,
-        color: "white",
+        color: "black",
         fontWeight: "bold",
         textAlign: "center"
     }
