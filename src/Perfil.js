@@ -1,29 +1,38 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, ScrollView, Platform } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 
-const ProfileScreen = ({ navigation }) => {
+const ProfileScreen = () => {
   const [dailyGoal, setDailyGoal] = useState('');
   const [profileImage, setProfileImage] = useState(null);
 
+  useEffect(() => {
+    (async () => {
+      if (Platform.OS !== 'web') {
+        const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+        if (status !== 'granted') {
+          alert('A permissão para acessar a galeria é necessária para escolher uma foto de perfil.');
+        }
+      }
+    })();
+  }, []);
+
   const handleSaveGoal = () => {
     console.log('Objetivo do dia salvo:', dailyGoal);
-    // Aqui você pode adicionar a lógica para salvar o objetivo do dia
+    // Lógica para salvar o objetivo do dia
   };
 
   const handleChoosePhoto = async () => {
-    const permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (permissionResult.granted === false) {
-      alert('Permissão para acessar a galeria é necessária!');
-      return;
-    }
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
 
-    const pickerResult = await ImagePicker.launchImageLibraryAsync();
-    if (pickerResult.cancelled === true) {
-      return;
+    if (!result.cancelled) {
+      setProfileImage(result.uri);
     }
-
-    setProfileImage(pickerResult.uri);
   };
 
   return (
@@ -54,7 +63,11 @@ const ProfileScreen = ({ navigation }) => {
           multiline={true}
         />
       </View>
-      
+      <TouchableOpacity
+        style={styles.button}
+        onPress={handleSaveGoal}>
+        <Text style={styles.buttonText}>Salvar Objetivo</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };

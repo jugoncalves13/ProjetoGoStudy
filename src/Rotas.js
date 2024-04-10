@@ -8,10 +8,14 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import ItensAprovados from './ItensAprovados';
 import MediaNota from './MediaNota';
+
 import Agenda from './Agenda';
 import HomeScreen from './Homeprincipal';
+import Perfil from './Perfil';
+
 
 import Login from './Login';
+import Home from './RedeWifi';
 
 
 const Tab = createBottomTabNavigator();
