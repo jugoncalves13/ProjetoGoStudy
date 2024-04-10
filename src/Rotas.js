@@ -6,12 +6,14 @@ import { UserContext } from './Context/UserContext';
 
 import ItensAprovados from './ItensAprovados';
 import MediaNota from './MediaNota';
-import RedeWifi from './RedeWifi';
-import Bateria from './Bateria';
+
 import Agenda from './Agenda';
+import HomeScreen from './Homeprincipal';
+import Perfil from './Perfil';
 
 
 import Login from './Login';
+import Home from './RedeWifi';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,11 +28,11 @@ export default function Rotas() {
     return (
         <NavigationContainer>
             <Tab.Navigator>
-                <Tab.Screen style={css.aprovados} name="Aprovados" component={ItensAprovados} />
-                <Tab.Screen style={css.calculadora} name="Calculadora" component={MediaNota} />
-                <Tab.Screen style={css.redewifi} name="RedeWifi" component={RedeWifi} />
-                <Tab.Screen style={css.bateria} name="Bateria" component={Bateria} />
+                <Tab.Screen style={css.agenda} name="Home" component={HomeScreen} />
                 <Tab.Screen style={css.agenda} name="Agenda" component={Agenda} />
+                <Tab.Screen style={css.calculadora} name="Calculadora" component={MediaNota} /> 
+                <Tab.Screen style={css.aprovados} name="Aprovados" component={ItensAprovados} />
+                <Tab.Screen style={css.agenda} name="Perfil" component={Perfil} />   
             </Tab.Navigator>
         </NavigationContainer>
     )

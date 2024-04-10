@@ -9,17 +9,8 @@ const HomeScreen = ({ navigation }) => {
 
       <Text style={styles.description}>Seja bem-vindo ao nosso site de estudos GoStudy.</Text>
       <Image style={styles.img} source={require("../assets/imagemhome.jpg")}/>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Tutoriais')}>
-            
-        <Text style={styles.buttonText}>Explorar Tutoriais</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => navigation.navigate('Recursos')}>
-        <Text style={styles.buttonText}>Ver Recursos</Text>
-      </TouchableOpacity>      
+      
+     
     </View>
   );
 };
